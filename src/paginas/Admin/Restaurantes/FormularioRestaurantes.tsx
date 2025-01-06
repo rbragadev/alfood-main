@@ -1,5 +1,4 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
-import axios from "axios";
+import { Box, Button, TextField,Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import IRestaurante from "../../../interfaces/IRestaurante";
@@ -35,29 +34,32 @@ const FormularioRestaurantes = () => {
     }
   };
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <Typography>Formulario de restaurantes</Typography>
-      <Box component="form" onSubmit={onSubmit}>
-        <TextField
-          value={nomeRestaurante}
-          onChange={(e) => setNomeRestaurante(e.target.value)}
-          id="standard-basic"
-          label="Nome do restaurante"
-          variant="standard"
-          fullWidth
-          required
-        />
-        <Button type="submit" variant="outlined">
-          Salvar
-        </Button>
+    <>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          flexGrow: 1
+        }}
+      >
+        <Typography>Formulario de restaurantes</Typography>
+        <Box component="form" sx={{ width: '100%'}} onSubmit={onSubmit}>
+          <TextField
+            value={nomeRestaurante}
+            onChange={(e) => setNomeRestaurante(e.target.value)}
+            id="standard-basic"
+            label="Nome do restaurante"
+            variant="standard"
+            fullWidth
+            required
+          />
+          <Button sx={{ width: '100%', mt: 2}} type="submit" variant="outlined">
+            Salvar
+          </Button>
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 };
 

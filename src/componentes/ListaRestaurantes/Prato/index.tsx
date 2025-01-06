@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react";
 import IPrato from "../../../interfaces/IPrato";
 import estilos from "./Prato.module.scss";
-import axios from "axios";
-import { IPaginacao } from "../../../interfaces/IPaginacao";
 
 interface PratoProps {
   prato: IPrato;
